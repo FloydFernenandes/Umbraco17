@@ -1,0 +1,21 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticleList>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+@if (Model.MainImage != null)
+{
+    <img src="@Model.MainImage.Url()" alt="" />
+}
+  @if (!string.IsNullOrWhiteSpace(Model.Title))
+    {
+    <h1 class="article-title">@Model.Title</h1>
+    }
+      @if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+    {
+    <h1 class="article-title">@Model.Subtitle</h1>
+    }
+
+ @await Html.PartialAsync("~/Views/Partials/_ArticleList.cshtml")
