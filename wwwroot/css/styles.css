@@ -1,0 +1,138 @@
+.article-list-hero {
+  position: relative;
+  width: 100vw;
+  height: 350px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.article-list-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+.article-list-hero .article-list-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  padding: 0 1rem;
+}
+.article-list-hero .article-list-hero-content h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.article-list-hero .article-list-hero-content p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.article-list-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.article-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.article-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #222;
+  transition: 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.article-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+}
+
+.article-hero {
+  position: relative;
+  width: 100vw;
+  height: 420px;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.article-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(60%);
+}
+.article-hero .article-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 800px;
+}
+.article-hero .article-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.article-hero .article-hero-content .intro {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.article-body {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #222;
+}
+.article-body p {
+  margin-bottom: 1rem;
+}
+
+.article-meta {
+  max-width: 900px;
+  margin: 1.5rem auto 2rem;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.3;
+  /* Make the meta stand out but stay subtle */
+}
+.article-meta .article-date,
+.article-meta .article-readtime {
+  background: #f3f3f3;
+  border: 1px solid #ddd;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.article-meta .article-sep {
+  color: #666;
+  user-select: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

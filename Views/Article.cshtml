@@ -1,29 +1,50 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Article>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco17.Services;
+@inject IReadingTimeService ReadingTimeService
 @{
 	Layout = "master.cshtml";
+
+    var readingMinutes = ReadingTimeService.CalculateReadingTime(Model?.Body?.ToString() ?? string.Empty);
+
 }
 
+<div class="article">
 
-
-@if (Model.HeroImage != null)
-{
-    <img src="@Model.HeroImage.Url()" alt="" />
-}
-
-<p>@Model.PublishedDate</p>
-
-@if (!string.IsNullOrWhiteSpace(Model.Title))
+    @if (Model?.HeroImage != null)
     {
-        <h1 class="article-title">@Model.Title</h1>
+        <div class="article-hero">
+            <img src="@Model.HeroImage.Url()" alt="@Model?.Title ?? " Article image"" />
+
+            <div class="article-hero-content">
+                @if (!string.IsNullOrWhiteSpace(Model?.Title))
+                {
+                    <h1>@Model.Title</h1>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model?.Intro))
+                {
+                    <p class="intro">@Model.Intro</p>
+                }
+            </div>
+        </div>
     }
 
-
-    @if (!string.IsNullOrWhiteSpace(Model.Intro))
+    @if (Model?.PublishedDate != null)
     {
-        <p class="article-intro">@Model.Intro</p>
+        <div class="article-meta">
+        <p class="article-date">Published Date: @Model.PublishedDate.ToString("MMMM dd, yyyy")</p>
+        <span class="article-sep">•</span>
+        <span class="article-readtime">~@readingMinutes min read</span>
+        </div>
     }
 
-@Html.Raw(Model.Body)
+    <div class="article-body">
+        @if (!string.IsNullOrEmpty(Model.Body.ToString()))
+        {
+        @Html.Raw(Model.Body)
+        }
+    </div>
 
+</div>

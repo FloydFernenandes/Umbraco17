@@ -5,17 +5,30 @@
 	Layout = "master.cshtml";
 }
 
-@if (Model.MainImage != null)
-{
-    <img src="@Model.MainImage.Url()" alt="" />
-}
-  @if (!string.IsNullOrWhiteSpace(Model.Title))
+<div class="article-list-page">
+
+
+    @if (Model?.MainImage != null)
     {
-    <h1 class="article-title">@Model.Title</h1>
-    }
-      @if (!string.IsNullOrWhiteSpace(Model.Subtitle))
-    {
-    <h1 class="article-title">@Model.Subtitle</h1>
+        <div class="article-list-hero">
+            <img src="@Model.MainImage.Url()" alt="@Model.MainImage.Name" />
+
+            <div class="article-list-hero-content">
+                @if (!string.IsNullOrWhiteSpace(Model?.Title))
+                {
+                    <h1>@Model.Title</h1>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model?.Subtitle))
+                {
+                    <p>@Model.Subtitle</p>
+                }
+            </div>
+        </div>
     }
 
- @await Html.PartialAsync("~/Views/Partials/_ArticleList.cshtml")
+    <div class="article-list-container">
+        @await Html.PartialAsync("~/Views/Partials/_ArticleList.cshtml")
+    </div>
+
+</div>

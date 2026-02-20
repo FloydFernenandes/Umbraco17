@@ -1,0 +1,25 @@
+{
+  "name": "umbraco17",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass wwwroot/scss:wwwroot/css --style=compressed --no-source-map",
+    "sass:watch": "sass --watch wwwroot/scss:wwwroot/css --style=expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FloydFernenandes/Umbraco17.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FloydFernenandes/Umbraco17/issues"
+  },
+  "homepage": "https://github.com/FloydFernenandes/Umbraco17#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

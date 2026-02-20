@@ -4,13 +4,12 @@
     var articles = Model.Children<Article>();
 }
 
-<ul>
+
+<div class="article-card-list">
     @foreach (var article in articles)
     {
-        <li>
-            <a href="@article.Url()">
-                @article.Name
-            </a>
-        </li>
+        <a href="@article.Url()" class="article-card">
+            <h3>@article.Name</h3>
+        </a>
     }
-</ul>
+</div>

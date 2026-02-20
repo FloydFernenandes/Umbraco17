@@ -1,3 +1,5 @@
+using Umbraco17.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -5,6 +7,8 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddComposers()
     .Build();
+
+builder.Services.AddSingleton<IReadingTimeService, ReadingTimeService>();
 
 WebApplication app = builder.Build();
 
