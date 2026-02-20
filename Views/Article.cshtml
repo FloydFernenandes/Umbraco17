@@ -12,10 +12,9 @@
 
 <div class="article">
 
-    @if (Model?.HeroImage != null)
-    {
+
         <div class="article-hero">
-            <img src="@Model.HeroImage.Url()" alt="@Model?.Title ?? " Article image"" />
+            <img src="@Model?.HeroImage.Url()" alt="@Model?.HeroImage.Name" />
 
             <div class="article-hero-content">
                 @if (!string.IsNullOrWhiteSpace(Model?.Title))
@@ -29,19 +28,17 @@
                 }
             </div>
         </div>
-    }
+    
 
-    @if (Model?.PublishedDate != null)
-    {
         <div class="article-meta">
-        <p class="article-date">Published Date: @Model.PublishedDate.ToString("MMMM dd, yyyy")</p>
+        <p class="article-date">Published Date: @Model?.PublishedDate.ToString("MMMM dd, yyyy")</p>
         <span class="article-sep">•</span>
         <span class="article-readtime">~@readingMinutes min read</span>
         </div>
-    }
+
 
     <div class="article-body">
-        @if (!string.IsNullOrEmpty(Model.Body.ToString()))
+        @if (!string.IsNullOrEmpty(Model?.Body.ToString()))
         {
         @Html.Raw(Model.Body)
         }

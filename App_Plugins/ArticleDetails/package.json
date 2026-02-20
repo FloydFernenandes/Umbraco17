@@ -1,0 +1,19 @@
+{
+  "name": "articledetails",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
+  },
+  "dependencies": {
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@umbraco-cms/backoffice": "^17.2.0",
+    "vite": "^7.3.1"
+  }
+}

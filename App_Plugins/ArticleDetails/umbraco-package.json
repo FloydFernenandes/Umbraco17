@@ -1,0 +1,28 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "ArticleDetails.Dashboard",
+  "version": "0.1.0",
+  "extensions": [
+    {
+      "type": "dashboard",
+      "alias": "ArticleDetails.Dashboard",
+      "name": "Article Stats",
+      "element": "/App_Plugins/ArticleDetails/dist/article-details.js",
+      "elementName": "article-details-dashboard",
+      "weight": 30,
+      "meta": {
+        "label": "Article Stats",
+        "pathname": "article-stats"
+      },
+      "conditions": [
+        {
+          "alias": "Umb.Condition.SectionAlias",
+          "match": "Umb.Section.Content"
+        },
+        {
+          "alias": "Umb.Condition.CurrentUser.IsAdmin"
+        }
+      ]
+    }
+  ]
+}
