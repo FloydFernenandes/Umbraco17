@@ -48,7 +48,7 @@ Assumptions made (2 points)
 
 
 Brief Notes on Decisions and Trade-offs
-1.  Bundled compiled assets + SCSS tooling: Node.js is required due to SCSS/dashboard tooling; compiled assets are included in the zip so the project runs immediately, at the cost of a slightly larger submission.
+1.  Bundled compiled assets + SCSS tooling: Node.js is required due to the SCSS/dashboard tooling; compiled assets are included so the project runs immediately after cloning.
 2.  Scope-first delivery: prioritized the required Article List + Article rendering, reading-time service, and Content dashboard over extra site structure/features to match the acceptance criteria and timebox.
 
 
