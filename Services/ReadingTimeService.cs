@@ -15,7 +15,7 @@ namespace Umbraco17.Services
             // Remove HTML so words are counted correctly
             var clean = HtmlTagRegex.Replace(text, " ");
 
-            // Split on whitespace; remove empties
+            // Split on whitespace
             var words = clean.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries);
             var count = words.Length;
 

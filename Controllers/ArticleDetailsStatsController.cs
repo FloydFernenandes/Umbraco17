@@ -8,7 +8,6 @@ using Umbraco.Cms.Web.Common.Authorization;
 namespace Umbraco17.Controllers
 {
 
-
     [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess, Roles = Constants.Security.AdminGroupAlias)]
     [VersionedApiBackOfficeRoute("article-details/stats")]
     public class ArticleDetailsStatsController : ManagementApiControllerBase
