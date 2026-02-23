@@ -15,13 +15,32 @@ Run the project (Visual Studio)
 5.  In the Visual Studio run target dropdown, select IIS Express.
 6.	Press F5 to run.
 
+
+SCSS / Frontend Styles (after cloning)
+•	node_modules is not included in the repo.
+•	Open a terminal in the Umbraco17 folder (same folder as Umbraco17.sln and package.json).
+•	Run the following to install dependencies (this creates node_modules):  
+•	npm install 
+•	If you change any SCSS (e.g., under wwwroot/scss), rebuild CSS with:
+•	npm run sass
+
+Dashboard (Backoffice) Setup (after cloning)
+•	App_Plugins/ArticleDetails/node_modules is not committed.
+•	Open a terminal in the Umbraco17 folder (same folder as Umbraco17.sln).
+•	Navigate to the dashboard Vite project:
+•	cd App_Plugins/ArticleDetails
+•	Install dashboard dependencies (creates node_modules under App_Plugins/ArticleDetails): 
+•	npm install
+•	Build the dashboard bundle (only needed if you changed dashboard code or if dist/ is not included): 
+•	npm run build
+•	Run the Umbraco site (Visual Studio / IIS Express or dotnet run) and open the backoffice.
+
 Backoffice Credentials
 •	Email: admin@example.com
 •	Password: 1234567890
 
 Database
-•	SQLite (included in the zipped project; no separate database setup required)
-
+• SQLite (database file is included in the GitHub repository; no separate database setup required after cloning).
 
 Assumptions made (2 points)
 •   title, intro, publishDate, and heroImage are mandatory to ensure the Razor templates always have required data and the frontend does not break due to missing values. 
